@@ -1,9 +1,9 @@
 import { IsNotEmpty } from "class-validator";
-import { Postagem } from "src/Postagem/entities/postagem.entity";
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Postagem } from "../../Postagem/entities/postagem.entity";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 
-@Entity({name: "tb_temas"})
+@Entity({name: 'tb_temas'})
 export class Tema {
 
     @PrimaryGeneratedColumn()
@@ -13,8 +13,6 @@ export class Tema {
     @Column({length:225, nullable:false})
     descricao: string
 
-    @UpdateDateColumn ()
-    data: Date;
 
     @OneToMany(() => Postagem, (postagem) => postagem.tema,)
     postagem: Postagem[];
