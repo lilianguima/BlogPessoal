@@ -1,5 +1,5 @@
 import { Body, Controller, HttpCode, HttpStatus, Post, UseGuards } from "@nestjs/common";
-import { ApiTags } from "@nestjs/swagger/dist";
+import { ApiTags } from "@nestjs/swagger";
 import { UsuarioLogin } from "../entities/usuariologin.entity";
 import { LocalAuthGuard } from "../guard/local-auth.guard";
 import { AuthService } from "../services/auth.service";
@@ -7,7 +7,7 @@ import { AuthService } from "../services/auth.service";
 @ApiTags('Usuario')
 @Controller('/auth')
 export class AuthController {
-    constructor ( private authService: AuthService){}
+    constructor (private authService: AuthService){}
 
     @UseGuards(LocalAuthGuard) //Guards - Guarda/ monitoramento de rota 
     @HttpCode(HttpStatus.OK)

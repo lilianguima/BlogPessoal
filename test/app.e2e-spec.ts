@@ -3,7 +3,6 @@ import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
 import { AppModule } from './../src/app.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { async } from 'rxjs';
 
 describe('Testes dos Módulos Usuário e Auth (e2e)', () => {
   let token: any;
